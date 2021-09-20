@@ -1,5 +1,5 @@
 import { createCanvas } from 'canvas';
-import { IMAGE_SIZE } from './constants';
+import { IMAGE_SIZE, TOTAL_COLORS } from './constants';
 
 /* getImage Url generates Image based on colors passed in params */ 
 export const getImageUrl = (colors) => {
@@ -12,9 +12,12 @@ export const getImageUrl = (colors) => {
     
     // creating Image with No color and same size
     const imgData = ctx.createImageData(IMAGE_SIZE.width, IMAGE_SIZE.height);  
-    
-    for (let i = 0; i < imgData.data.length; i += 4) {  // Filling colors in Image
-        const cPos = i / 4;
+
+    const step = imgData.data.length/TOTAL_COLORS;
+    console.log('imgData',imgData);
+    for (let i = 0; i < imgData.data.length; i += step) {  // Filling colors in Image
+        const cPos = i / step;
+        // console.log('lastPos', i)
         imgData.data[i] = colors[cPos][0];
         imgData.data[i + 1] = colors[cPos][1];
         imgData.data[i + 2] = colors[cPos][2];

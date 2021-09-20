@@ -1,10 +1,10 @@
-import { COlOR_DIVISION, STEP_DIFF } from "../utils/constants";
+import { COLOR_DIVISION, STEP_DIFF } from "../utils/constants";
 import { getImageUrl } from "../utils/util";
 
 const ImageFormation =(props)=>{
     const colorPoints = [];
     const colors = [];
-    for (let i = 1; i <= COlOR_DIVISION; i++) {
+    for (let i = 1; i <= COLOR_DIVISION; i++) {
         colorPoints.push(i*STEP_DIFF);
     }
     colorPoints.forEach(r => {
