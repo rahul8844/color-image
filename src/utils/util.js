@@ -1,5 +1,5 @@
 import { createCanvas } from 'canvas';
-import { IMAGE_SIZE, TOTAL_COLORS } from './constants';
+import { COLOR_DIVISION, IMAGE_SIZE, STEP_DIFF, TOTAL_COLORS } from './constants';
 
 /* getImage Url generates Image based on colors passed in params */ 
 export const getImageUrl = (colors) => {
@@ -25,4 +25,23 @@ export const getImageUrl = (colors) => {
     }
     ctx.putImageData(imgData, 0, 0);                // Putting Image to the canvas so we can get image url
     return canvas.toDataURL();                      // return image url with filled color
+}
+
+export const getColors = () =>{
+    const colorPoints = [];
+    const colors = [];
+    /** Finding equally disributed numbers which lies in range 0 - 255 */
+    for (let i = 1; i <= COLOR_DIVISION; i++) {
+        colorPoints.push(i * STEP_DIFF - 1);
+    }
+
+    /** Getting all the colors which can be made from above 32 r g b combination */
+    colorPoints.forEach(r => {
+        colorPoints.forEach(g => {
+            colorPoints.forEach(b => {
+                colors.push([r, g, b]);
+            });
+        })
+    });
+    return colors;
 }
