@@ -14,7 +14,7 @@ export const getImageUrl = (colors) => {
     const imgData = ctx.createImageData(IMAGE_SIZE.width, IMAGE_SIZE.height);  
 
     const step = imgData.data.length/TOTAL_COLORS;
-    console.log('imgData',imgData);
+    // console.log('imgData',imgData);
     for (let i = 0; i < imgData.data.length; i += step) {  // Filling colors in Image
         const cPos = i / step;
         // console.log('lastPos', i)
