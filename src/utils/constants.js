@@ -5,5 +5,5 @@ export const IMAGE_SIZE={
 };
 export const COLOR_DIVISION = 32;
 export const RANGE = 256;
-export const TOTAL_COLORS = 32768;
+export const TOTAL_COLORS = COLOR_DIVISION * COLOR_DIVISION * COLOR_DIVISION;
 export const STEP_DIFF = RANGE / COLOR_DIVISION;

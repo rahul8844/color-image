@@ -1,0 +1,17 @@
+---------Logic-------------
+
+Color component range is 256.
+color breakup into 32 points i.e. we need 32 diffrent numbers wich lies under 0-255 range.
+To make it equal distribution accross r g b we took equally devided 32 numbers in range of 0 to 255 -
+[7, 15, 23, 31, 39, 47, 55, 63, 71, 79, 87, 95, 103, 111, 119, 127, 135, 143, 151, 159, 167, 175, 183, 191, 199, 207, 215, 223, 231, 239, 247, 255];
+total color numbers are = 32
+that means total numbers of colors in mage with combinantion of r g b = 32*32*32 = 32768
+ 
+--------Image Creation-----
+- Created a canvas
+- Created Image from canvas with nocolor
+- created all combination of 32768 of rgb colors
+- FIlled these colors into image 
+- put this image in canvas 
+- now get the URL of this image of canvas
+- visualise image from this URL  
