@@ -1,9 +1,9 @@
 import React from 'react';
 import { configure, shallow,  } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import ImageFormation from './components/ImageFormation';
-import { IMAGE_SIZE, TOTAL_COLORS } from './utils/constants';
-import { getColors, getImageUrl } from './utils/util';
+import ImageFormation from '../components/ImageFormation';
+import { IMAGE_SIZE, TOTAL_COLORS } from '../utils/constants';
+import { getColors, getImageUrl } from '../utils/util';
 
 configure({ adapter: new Adapter() });
 
