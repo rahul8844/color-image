@@ -15,10 +15,18 @@ describe("Image Resolution", () => {
 });
 
 describe("getColors() method", () => {
-    it("should give the array of numbers with same length of image resolution", () => {
+    it("should give the array of rgb combination of numbers with same length of image resolution", () => {
         const colors = getColors();
         expect(colors instanceof Array).toBeTruthy();
         expect(colors.length).toEqual(TOTAL_COLORS);
+    });
+});
+
+describe("Each Color", () => {
+    it("should be unique", () => {
+        const colors = getColors().map(rgb=>JSON.stringify(rgb));
+        const uniqueColors = new Set(colors);
+        expect(colors.length).toEqual(uniqueColors.size);
     });
 });
 
@@ -28,6 +36,8 @@ describe("getImageUrl() method", () => {
         expect(imageUrl).toContain('data:image/png;base64,')
     });
 });
+
+
 
 describe("ImageFormation", () => {
     it("should render ImageFormation Component", () => {

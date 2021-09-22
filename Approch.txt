@@ -11,7 +11,7 @@ that means total numbers of colors in mage with combinantion of r g b = 32*32*32
 - Created a canvas
 - Created Image from canvas with nocolor
 - created all combination of 32768 of rgb colors
-- FIlled these colors into image 
+- Filled these colors into image 
 - put this image in canvas 
 - now get the URL of this image of canvas
 - visualise image from this URL  
